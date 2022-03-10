@@ -64,6 +64,8 @@ while True:
         Yaw.write(yaw * (255 / 180))
         Pitch.write(pitch * (255 / 180))
 
+        print(yaw, pitch)
+
 
     # pygame update
     clock.tick(60)
