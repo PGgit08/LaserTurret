@@ -21,8 +21,8 @@ XDIV = 7
 YDIV = 4
 
 # screen dimensions
-SCREEN_WIDTH = 500
-SCREEN_HEIGHT = 500
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
 
 CANVAS_SIZE = (SCREEN_WIDTH, SCREEN_HEIGHT)
 
@@ -49,9 +49,12 @@ while True:
     # get mouse positions
     (mouseX, mouseY) = pygame.mouse.get_pos()
 
+    # possible tuning
+    # mouseX -= 20
+
     # servo angles (coords -> angles)
-    yaw = int(mouseX * (180 / SCREEN_WIDTH))
-    pitch = int(mouseY * (180 / SCREEN_HEIGHT))
+    yaw = int(mouseX * (182 / SCREEN_WIDTH))
+    pitch = int(mouseY * (182 / SCREEN_HEIGHT))
 
     # update angles
     angles = [yaw, pitch]
@@ -61,8 +64,8 @@ while True:
         oldAngles = angles
 
         # serial send (angles -> PWM thingy)
-        Yaw.write(yaw * (255 / 180))
-        Pitch.write(pitch * (255 / 180))
+        Yaw.write(yaw * (255 / 182))
+        Pitch.write(pitch * (255 / 182))
 
         print(yaw, pitch)
 
