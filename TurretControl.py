@@ -50,7 +50,7 @@ while True:
     (mouseX, mouseY) = pygame.mouse.get_pos()
 
     # possible tuning
-    # mouseX -= 20
+    # mouseY += 10z
 
     # servo angles (coords -> angles)
     yaw = int(mouseX * (182 / SCREEN_WIDTH))
